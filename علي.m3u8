@@ -1,0 +1,7 @@
+#EXTM3U
+
+#EXTINF:-1,القناة الأولى
+http://v3tv.live/play/live.php?mac=00:1A:79:C2:01:8B&stream=1641618&extension=m3u8
+
+#EXTINF:-1,القناة الثانية
+http://v3tv.live/play/live.php?mac=00:1A:79:C2:01:8B&stream=1641624&extension=m3u8
