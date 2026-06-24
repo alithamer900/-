@@ -1,10 +1,13 @@
 #EXTM3U
 
 #EXT-X-STREAM-INF:BANDWIDTH=2500000,RESOLUTION=1280x720
-https://koko1.xandcdn.xyz/ch1_720/index.m3u8
+https://corestream.ronaldovurdu.help//trt1/tracks-v1a1/mono.m3u8
 
 #EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x480
-https://koko1.xandcdn.xyz/ch1_480/index.m3u8
+https://edge22.776740.ir.cdn.ir/hls2/sport.m3u8
 
-#EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x240
-https://koko1.xandcdn.xyz/ch1_240/index.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x480
+https://3.bb1.dpdns.org/hls/1/stream.m3u8
+
+#EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x480
+https://3.bb1.dpdns.org/hls/0/stream.m3u8
