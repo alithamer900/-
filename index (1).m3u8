@@ -1,10 +1,3 @@
 #EXTM3U
-
-#EXT-X-STREAM-INF:BANDWIDTH=2500000,RESOLUTION=1280x720
-https://koko1.xandcdn.xyz/ch2_720/index.m3u8
-
-#EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x480
-https://koko1.xandcdn.xyz/ch2_480/index.m3u8
-
-#EXT-X-STREAM-INF:BANDWIDTH=1200000,RESOLUTION=854x240
-https://koko1.xandcdn.xyz/ch2_240/index.m3u8
+#EXTINF:1 tvg-name="max" tvg-logo="https://e.top4top.io/p_3819zmz5v0.png" group-title="الفئة الأولى",max
+http://fastshare1.com:80/live/Hussein456124/5478243659/744526.ts
