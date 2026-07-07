@@ -1,14 +1,11 @@
 #EXTM3U
 #EXT-X-VERSION:3
 
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=4103320,RESOLUTION=1920x1080,QUALITY=HD,FRAME-RATE=30,NAME="1080p"
-https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist_b3500000_t64MTA4MHA=.m3u8
-
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1200000,RESOLUTION=1280x720,QUALITY=sd,FRAME-RATE=30,NAME="720p"
-https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist_b2500000_t64NzIwcA==.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=4103320,RESOLUTION=1280x1080,QUALITY=hd,FRAME-RATE=30,NAME="1080p"
+https://xoxo2.cdn4koora.xyz/hls/ch2_720/index.m3u8
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1200000,RESOLUTION=854x480,QUALITY=sd,FRAME-RATE=30,NAME="480p"
-https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist_b900000_t64MzYwcA==.m3u8
+https://xoxo1.cdn4koora.xyz/hls/ch2_480/index.m3u8
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1200000,RESOLUTION=854x480,QUALITY=sd,FRAME-RATE=30,NAME="480p"
-https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist_b350000_t64MjQwcA==.m3u8
+https://xoxo1.cdn4koora.xyz/hls/ch2_240/index.m3u8
