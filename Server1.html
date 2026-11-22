@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="referrer" content="no-referrer">
+<title>علي TV</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.server-bar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 8px 10px 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background: #000;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.server-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.server-btn {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 40px;
+  background: #aaa;
+  color: #111;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.server-btn.active {
+  background: #E95945;
+  color: #fff;
+}
+
+.server-btn.active::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  background: #311361;
+}
+
+.player-wrap {
+  width: 100%;
+  height: 500px;
+  background: #000;
+  overflow: hidden;
+}
+
+#player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  .player-wrap {
+    height: 280px;
+  }
+
+  .server-btn {
+    min-height: 46px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- أزرار بي إن سبورت 1 إلى 9 -->
+<div class="server-bar">
+  <button class="server-btn active" data-index="0">بي ان سبورت 1</button>
+  <button class="server-btn" data-index="1">بي ان سبورت 2</button>
+  <button class="server-btn" data-index="2">بي ان سبورت 3</button>
+  <button class="server-btn" data-index="3">بي ان سبورت 4</button>
+  <button class="server-btn" data-index="4">بي ان سبورت 5</button>
+  <button class="server-btn" data-index="5">بي ان سبورت 6</button>
+  <button class="server-btn" data-index="6">بي ان سبورت 7</button>
+  <button class="server-btn" data-index="7">بي ان سبورت 8</button>
+  <button class="server-btn" data-index="8">بي ان سبورت 9</button>
+</div>
+
+<!-- مشغل البث -->
+<div class="player-wrap" id="playerWrap">
+  <iframe
+    id="player"
+    src="about:blank"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    frameborder="0"
+    referrerpolicy="no-referrer"
+    sandbox="allow-same-origin allow-scripts allow-forms">
+  </iframe>
+</div>
+
+<script>
+const serverLinks = [
+  "https://1.draximo.site/splayer/Live1.php",
+  "https://1.draximo.site/splayer/Live2.php",
+  "https://1.draximo.site/splayer/Live3.php",
+  "https://1.draximo.site/splayer/Live4.php",
+  "https://1.draximo.site/splayer/Live5.php",
+  "https://1.draximo.site/splayer/Live6.php",
+  "https://1.draximo.site/splayer/Live7.php",
+  "https://1.draximo.site/splayer/Live8.php",
+  "https://1.draximo.site/splayer/Live9.php"
+];
+
+const playerWrap = document.getElementById("playerWrap");
+const buttons = document.querySelectorAll(".server-btn");
+
+function loadServer(index) {
+  buttons.forEach((button, i) => {
+    button.classList.toggle("active", i === index);
+  });
+
+  // إيقاف المشغل السابق وإزالته
+  playerWrap.replaceChildren();
+
+  // إنشاء مشغل جديد للسيرفر المختار
+  const iframe = document.createElement("iframe");
+  iframe.id = "player";
+  iframe.allow = "autoplay; fullscreen; picture-in-picture";
+  iframe.allowFullscreen = true;
+  iframe.setAttribute("frameborder", "0");
+  iframe.setAttribute(
+    "sandbox",
+    "allow-same-origin allow-scripts allow-forms"
+  );
+  iframe.referrerPolicy = "no-referrer";
+
+  iframe.style.cssText =
+    "display:block;width:100%;height:100%;border:0;background:#000";
+
+  playerWrap.appendChild(iframe);
+
+  const url = serverLinks[index];
+
+  if (url && url.trim() !== "") {
+    iframe.src = url;
+  } else {
+    iframe.src = "about:blank";
+  }
+}
+
+// تبديل السيرفر عند الضغط
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    loadServer(Number(button.dataset.index));
+  });
+});
+
+// تحميل السيرفر الأول تلقائياً
+loadServer(0);
+</script>
+
+</body>
+</html>
